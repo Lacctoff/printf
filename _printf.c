@@ -8,7 +8,6 @@
  * @format: used to specify the desired output format
  * Return: returns the number of characters printed.
 */
-int _printf(const char *format, ...);
 
 int _printf(const char *format, ...)
 {
