@@ -47,6 +47,16 @@ int _printf(const char *format, ...)
 					i += 1;
 					count = (count + (bites_count - 1));
 					break;
+				case 'd':
+					bites_count = _numput(va_arg(argList, int));
+					i++;
+					count = (count + (bites_count - 1));
+					break;
+				case 'i':
+					bites_count = _numput(va_arg(argList, int));
+					i++;
+					count = (count + (bites_count - 1));
+					break;
 				case '%':
 					_writechar('%');
 					count++;

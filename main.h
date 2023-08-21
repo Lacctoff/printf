@@ -9,5 +9,5 @@
 int _printf(const char *format, ...);
 int _writechar(char c);
 int _strputss(char *str);
-
+int _numput(int num);
 #endif
