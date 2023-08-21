@@ -56,7 +56,6 @@ int _printf(const char *format, ...)
 
 			}
 		}
-		count++;
 	}
 	va_end(argList);
 	return (count);
