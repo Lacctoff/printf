@@ -8,7 +8,7 @@ int _printf(const char *format, ...);
  *
  * @format: used to specify the desired output format
  * Return: returns the number of characters printed.
-*/
+ */
 
 int _printf(const char *format, ...)
 {
@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			_writechar(format[i]);
-			count++;
+
 		}
 		else
 		{
@@ -56,6 +56,7 @@ int _printf(const char *format, ...)
 
 			}
 		}
+		count++;
 	}
 	va_end(argList);
 	return (count);
