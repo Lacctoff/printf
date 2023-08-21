@@ -1,6 +1,7 @@
 #include "main.h"
-
+int _printf(const char *format, ...);
 /**
+ * _printf - It processes a format string and a variable set of arguments,
  * _printf - It processes a format string and a variable set of arguments,
  * then formats and outputs the result
  * accordingly.
