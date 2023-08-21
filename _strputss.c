@@ -12,7 +12,7 @@ int _strputss(char *str)
 
 	for (outputCount = 0; str[outputCount] != '\0'; outputCount++)
 	{
-		_writechar(str[output]);
+		_writechar(str[outputCount]);
 	}
 	return (outputCount);
 }
