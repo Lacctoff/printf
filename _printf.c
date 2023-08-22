@@ -1,5 +1,7 @@
 #include "main.h"
+
 int _printf(const char *format, ...);
+
 /**
  * _printf - It processes a format string and a variable set of arguments,
  * _printf - It processes a format string and a variable set of arguments,
@@ -16,6 +18,7 @@ int _printf(const char *format, ...)
 	unsigned int i;
 	unsigned int count;
 	int bites_count;
+	int n;
 
 	count = 0;
 
@@ -47,19 +50,21 @@ int _printf(const char *format, ...)
 					i += 1;
 					count = (count + (bites_count - 1));
 					break;
-				case 'd':
-					bites_count = _writechar(va_arg(argList, int));
-					i++;
-					count = (count + (bites_count - 1));
-					break;
-				case 'i':
-					bites_count = _writechar(va_arg(argList, int));
-					i++;
-					count = (count + (bites_count - 1));
-					break;
 				case '%':
 					_writechar('%');
 					count++;
+					break;
+				case 'd':
+				case 'i':
+					n = va_arg(argList, int);
+
+					if (n < 0)
+					{
+						_writechar('-');
+						n = -n;
+					}
+					count += write_num(n);
+					i++;
 					break;
 				default:
 					break;
