@@ -66,6 +66,11 @@ int _printf(const char *format, ...)
 					count += write_num(n);
 					i++;
 					break;
+				case 'b':
+					n = va_arg(argList, unsigned int);
+					count += write_binary(n);
+					i++;
+					break;
 				default:
 					break;
 
