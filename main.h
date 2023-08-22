@@ -5,8 +5,11 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdint.h>
 
 
+int write_pointer(void *ptr);
+int write_hexadecimal(uintptr_t value);
 int _printf(const char *format, ...);
 int _writechar(char c);
 int _strputss(char *str);

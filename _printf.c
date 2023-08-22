@@ -38,6 +38,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
+
 			switch (format[i + 1])
 			{
 				case 'c':
@@ -69,6 +70,10 @@ int _printf(const char *format, ...)
 				case 'b':
 					n = va_arg(argList, unsigned int);
 					count += write_binary(n);
+					i++;
+					break;
+				case 'p':
+					count += write_pointer(va_arg(argList, void *));
 					i++;
 					break;
 				default:
