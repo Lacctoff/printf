@@ -82,6 +82,16 @@ int _printf(const char *format, ...)
 					count += write_octal(n);
 					i++;
 					break;
+				case 'x':
+					n = va_arg(argList, unsigned int);
+					count += _write_hexadecimal(n, 'x');
+					i++;
+					break;
+				case 'X':
+					n = va_arg(argList, unsigned int);
+					count += _write_hexadecimal(n, 'x');
+					i++;
+					break;
 				case 'p':
 					count += write_pointer(va_arg(argList, void *));
 					i++;
