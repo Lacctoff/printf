@@ -72,6 +72,16 @@ int _printf(const char *format, ...)
 					count += write_binary(n);
 					i++;
 					break;
+				case 'u':
+					n = va_arg(argList, unsigned int);
+					count += write_unsigned(n);
+					i++;
+					break;
+				case 'o':
+					n = va_arg(argList, unsigned int);
+					count += write_octal(n);
+					i++;
+					break;
 				case 'p':
 					count += write_pointer(va_arg(argList, void *));
 					i++;
@@ -79,27 +89,27 @@ int _printf(const char *format, ...)
 				case '+':
 					if (format[i + 1] == 'd' || format[i + 1] == 'i')
 					{
-					int n = va_arg(argList, int);
+						int n = va_arg(argList, int);
 
-					if (n >= 0)
-					{
-						_writechar('+');
-					}
-					count += write_num(n);
-					i++;
+						if (n >= 0)
+						{
+							_writechar('+');
+						}
+						count += write_num(n);
+						i++;
 					}
 					break;
 				case ' ':
 					if (format[i + 1] == 'd' || format[i + 1] == 'i')
 					{
-					int n = va_arg(argList, int);
+						int n = va_arg(argList, int);
 
-					if (n >= 0)
-					{
-						_writechar(' ');
-					}
-					count += write_num(n);
-					i++;
+						if (n >= 0)
+						{
+							_writechar(' ');
+						}
+						count += write_num(n);
+						i++;
 					}
 					break;
 				case '#':

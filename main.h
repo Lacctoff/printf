@@ -15,5 +15,7 @@ int _writechar(char c);
 int _strputss(char *str);
 int write_num(int num);
 int write_binary(unsigned int num);
+int write_unsigned(unsigned int num);
+int write_octal(unsigned int num);
 
 #endif
