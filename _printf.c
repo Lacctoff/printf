@@ -101,25 +101,25 @@ int _printf(const char *format, ...)
 					{
 						int n = va_arg(argList, int);
 
-						if (n >= 0)
-						{
-							_writechar('+');
-						}
-						count += write_num(n);
-						i++;
+					if (n >= 0)
+					{
+						_writechar('+');
+					}
+					count += write_num(n);
+					i++;
 					}
 					break;
 				case ' ':
 					if (format[i + 1] == 'd' || format[i + 1] == 'i')
 					{
-						int n = va_arg(argList, int);
+					int n = va_arg(argList, int);
 
-						if (n >= 0)
-						{
-							_writechar(' ');
-						}
-						count += write_num(n);
-						i++;
+					if (n >= 0)
+					{
+						_writechar(' ');
+					}
+					count += write_num(n);
+					i++;
 					}
 					break;
 				case '#':
