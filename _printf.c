@@ -79,7 +79,7 @@ int _printf(const char *format, ...)
 				case '+':
 					if (format[i + 1] == 'd' || format[i + 1] == 'i')
 					{
-					int n = va_arg(argList, int);
+						int n = va_arg(argList, int);
 
 					if (n >= 0)
 					{
@@ -92,7 +92,7 @@ int _printf(const char *format, ...)
 				case ' ':
 					if (format[i + 1] == 'd' || format[i + 1] == 'i')
 					{
-					int n = va_arg(argList, int);
+						int n = va_arg(argList, int);
 
 					if (n >= 0)
 					{
