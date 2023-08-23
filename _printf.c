@@ -76,6 +76,41 @@ int _printf(const char *format, ...)
 					count += write_pointer(va_arg(argList, void *));
 					i++;
 					break;
+				case '+':
+					if (format[i + 1] == 'd' || format[i + 1] == 'i')
+					{
+					int n = va_arg(argList, int);
+
+					if (n >= 0)
+					{
+						_writechar('+');
+					}
+					count += write_num(n);
+					i++;
+					}
+					break;
+				case ' ':
+					if (format[i + 1] == 'd' || format[i + 1] == 'i')
+					{
+					int n = va_arg(argList, int);
+
+					if (n >= 0)
+					{
+						_writechar(' ');
+					}
+					count += write_num(n);
+					i++;
+					}
+					break;
+				case '#':
+					if (format[i + 1] == 'x')
+					{
+						_writechar('0');
+						_writechar('x');
+						count += write_hexadecimal(va_arg(argList, unsigned int));
+						i++;
+					}
+					break;
 				default:
 					break;
 
