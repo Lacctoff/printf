@@ -72,6 +72,26 @@ int _printf(const char *format, ...)
 					count += write_binary(n);
 					i++;
 					break;
+				case 'u':
+					n = va_arg(argList, unsigned int);
+					count += write_unsigned(n);
+					i++;
+					break;
+				case 'o':
+					n = va_arg(argList, unsigned int);
+					count += write_octal(n);
+					i++;
+					break;
+				case 'x':
+					n = va_arg(argList, unsigned int);
+					count += _write_hexadecimal(n, 'x');
+					i++;
+					break;
+				case 'X':
+					n = va_arg(argList, unsigned int);
+					count += _write_hexadecimal(n, 'x');
+					i++;
+					break;
 				case 'p':
 					count += write_pointer(va_arg(argList, void *));
 					i++;
@@ -81,12 +101,12 @@ int _printf(const char *format, ...)
 					{
 						int n = va_arg(argList, int);
 
-					if (n >= 0)
-					{
-						_writechar('+');
-					}
-					count += write_num(n);
-					i++;
+						if (n >= 0)
+						{
+							_writechar('+');
+						}
+						count += write_num(n);
+						i++;
 					}
 					break;
 				case ' ':
@@ -94,12 +114,12 @@ int _printf(const char *format, ...)
 					{
 						int n = va_arg(argList, int);
 
-					if (n >= 0)
-					{
-						_writechar(' ');
-					}
-					count += write_num(n);
-					i++;
+						if (n >= 0)
+						{
+							_writechar(' ');
+						}
+						count += write_num(n);
+						i++;
 					}
 					break;
 				case '#':
