@@ -101,4 +101,4 @@ Specifier                |Output                        |Examples |
 ### Authors &copy;
 
 - Oluwatofunmi Lasisi
-- Titobiloba Tella
+- Titobiloluwa Tella
